@@ -4834,6 +4834,8 @@ static int cma_force_disconnect(struct rdma_id_private *id_priv)
 {
 	struct cma_work *work;
 
+	trace_cm_force_disconnect(id_priv);
+
 	work = kzalloc_obj(*work);
 	if (!work)
 		return -ENOMEM;
